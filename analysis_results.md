@@ -57,14 +57,14 @@ Experience Level Distribution:
 
 
 Salary Statistics by Experience Level:
-+----------------+-----+------------------+------+-----+------+
-|experience_level|count|              mean|median|  min|   max|
-+----------------+-----+------------------+------+-----+------+
-|              EN| 1325| 92327.41358490566| 83000|15000|774000|
-|              EX|  501|195264.28143712576|192000|15000|465000|
-|              MI| 4038|125923.13125309559|115000|15000|800000|
-|              SE|10670|163662.82614807872|155000|15809|750000|
-+----------------+-----+------------------+------+-----+------+
++----------------+------------------+------+-----+------+
+|experience_level|              mean|median|  min|   max|
++----------------+------------------+------+-----+------+
+|              EN| 92327.41358490566| 83000|15000|774000|
+|              EX|195264.28143712576|192000|15000|465000|
+|              MI|125923.13125309559|115000|15000|800000|
+|              SE|163662.82614807872|155000|15809|750000|
++----------------+------------------+------+-----+------+
 
 
 High Paying Jobs Analysis (SQL):
@@ -94,7 +94,13 @@ High Paying Jobs Analysis (SQL):
 +----------------------------------+----------+---------+
 
 
-Salary Distribution Analysis by Experience Level and Salary Range:
+
+        Process:
+        1. Categorizes salaries into 4 ranges (Entry/Mid/Senior/Executive Level)
+        2. Groups data by experience level and salary range
+        3. Calculates count, average salary, standard deviation, and percentage for each group
+        
+Salary Distribution Analysis by Experience Level and Salary Range (data transformation):
 +----------------+---------------+-----+----------+-------------+------------+
 |experience_level|salary_range   |count|avg_salary|salary_stddev|pct_of_level|
 +----------------+---------------+-----+----------+-------------+------------+
