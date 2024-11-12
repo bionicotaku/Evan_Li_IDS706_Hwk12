@@ -17,4 +17,7 @@ pyspark
 requests
 tabulate
 
-
+numpy==1.24.3
+pandas==2.2.2
+matplotlib==3.5.1
+reportlab==3.6.6

@@ -1,34 +1,57 @@
 # Evan_Li_IDS706_Hwk12
 
-[![CI](https://github.com/nogibjj/Jeremy_Tan_IDS706_Week10/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Jeremy_Tan_IDS706_Week10/actions/workflows/cicd.yml)
+[![CI](https://github.com/bionicotaku/Evan_Li_IDS706_Hwk12/actions/workflows/cicd.yml/badge.svg)](https://github.com/bionicotaku/Evan_Li_IDS706_Hwk12/actions/workflows/cicd.yml)
 
-## PySpark Data Processing
-The project involves utilizing PySpark for data processing on a substantial dataset. The main objectives are to incorporate a Spark SQL query and execute a data transformation. I use fivethirtyeight's dataset on showhost guests to peform these operatons. 
+## Dataset Overview
+
+The data is sourced from [Kaggle's Data Engineer Salary in 2024 dataset](https://www.kaggle.com/datasets/chopper53/data-engineer-salary-in-2024). This dataset provides insights into data engineer salaries and employment attributes for the year 2024. It includes information such as:
+   - Salary
+   - Job title
+   - Experience level
+   - Employment type
+   - Employee residence
+   - Remote work ratio
+   - Company location
+   - Company size
+
+## Key Features
+1. Uses PySpark SQL for complex queries
+2. Implements window functions for advanced analytics
+3. Provides comprehensive salary analysis by experience level
+4. Generates formatted output in markdown
+
+## Actions
 
 ### Preparation:
-1. open codespaces
-2. wait for environment to be installed
-3. run: `python main.py`
-4. [Pyspark Output Data/Summary Markdown File](pyspark_output.md)
+1. Install all dependencies: `make install`
+2. run: `make run`
+3. [Pyspark Output Data/Summary Markdown File](analysis_results.md)
 
 ### Format code
 1. Format code: `make format`
 2. Lint code: `make lint`
 3. Test code: `make test`
 
-### Process
-1. I first extract the dataset via `extract` 
-2. I then start a spark session via `start_spark`
-3. I then load the dataset via `load_data`
-4. I then find some descriptive statistics via `descibe`
-5. I then query the dataset via `query`
-6. I then do some more transformation on the sample dataset via `example_transform`
-7. I finally end my spark session via `end_spark`
+## PySpark Data Processing
+The project implements data processing on a Data Engineer Salary dataset using PySpark. It includes Spark SQL query and data transformation. Here are the key components:
 
-## References
-1. https://github.com/nogibjj/python-ruff-template
-2. https://github.com/fivethirtyeight/data/tree/master/daily-show-guests
+### Data Processing Pipeline
+#### 1. Data Loading and Extraction
+- Reads salary data from CSV file using PySpark
+- Selects relevant columns including work year, experience level, job title, salary, remote ratio, and company size
 
 
+#### 2. Statistical Analysis
+- Calculates descriptive statistics for salaries (count, mean, stddev, quartiles)
+- Generates job title distribution analysis
+- Analyzes experience level distribution
+- Computes salary statistics by experience level
 
-test github actions
+#### 3. Advanced Analytics
+- Implements Spark SQL queries to analyze high-paying jobs
+- Performs complex data transformations using DataFrame API
+- Creates salary range categories and calculates distributions
+
+#### 4. Results Generation
+- Outputs results to a markdown file
+- Includes statistical summaries and analysis
