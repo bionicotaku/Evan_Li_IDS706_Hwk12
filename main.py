@@ -4,10 +4,11 @@ import io
 from contextlib import redirect_stdout
 from pyspark.sql import SparkSession
 
+
 def main():
     # Initialize Spark session
     spark = SparkSession.builder.appName("SalaryAnalysis").getOrCreate()
-    
+
     try:
         # Read data
         filteredData = calculate_stat.read_data("data/Dataset-salary-2024.csv")
@@ -16,7 +17,7 @@ def main():
         print("Salary Statistics:")
         calculate_stat.calculate_stat(filteredData).show()
         print()
-        
+
         # Print job title distribution
         print("Top 20 Job Titles Distribution:")
         calculate_stat.get_job_title_distribution(filteredData).show()
@@ -38,19 +39,24 @@ def main():
         print()
 
         # Print salary distribution analysis using PySpark
-        print("""
+        print(
+            """
         Process:
         1. Categorizes salaries into 4 ranges (Entry/Mid/Senior/Executive Level)
         2. Groups data by experience level and salary range
         3. Calculates count, average salary, standard deviation, and percentage for each group
-        """)
-        print("Salary Distribution Analysis by Experience Level and Salary Range (data transformation):")
+        """
+        )
+        print(
+            "Salary Distribution Analysis by Experience Level and Salary Range (data transformation):"
+        )
         calculate_stat.analyze_salary_trends(filteredData).show(truncate=False)
         print()
-    
+
     finally:
         # Stop Spark session
         spark.stop()
+
 
 if __name__ == "__main__":
     captured_output = io.StringIO()

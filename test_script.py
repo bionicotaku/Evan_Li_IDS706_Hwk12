@@ -38,9 +38,9 @@ class TestMain(unittest.TestCase):
             "Experience Level Distribution:",
             "Salary Statistics by Experience Level:",
             "High Paying Jobs Analysis (SQL):",
-            "Salary Distribution Analysis by Experience Level and Salary Range"
+            "Salary Distribution Analysis by Experience Level and Salary Range",
         ]
-        
+
         for section in expected_sections:
             self.assertIn(section, output)
 

@@ -9,7 +9,7 @@ format:
 	black *.py
 
 lint:
-	ruff check *.py mylib/*.py test_*.py
+	ruff check --line-length 120 *.py mylib/*.py test_*.py
 
 run:
 	python main.py
